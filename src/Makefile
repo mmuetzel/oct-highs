@@ -8,8 +8,5 @@ PKG_CONFIG ?= pkg-config
 CXX ?= $(shell $(MKOCTFILE) -p CXX)
 CXX += -g3 -std=gnu++11
 
-CPPFLAGS = $(CPPFLAGS) $(shell $(PKG_CONFIG) --cflags highs)
-LDFLAGS = $(LDFLAGS) $(shell $(PKG_CONFIG) --libs highs)
-
 all:
 	CXX="$(CXX)" $(MKOCTFILE) $(shell $(PKG_CONFIG) --cflags highs) $(shell $(PKG_CONFIG) --libs highs) __highs__.cc
