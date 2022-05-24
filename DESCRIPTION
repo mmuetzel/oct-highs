@@ -1,13 +1,15 @@
 Name: highs
-Version: 1.0.0
-Date: 2022-05-23
+Version: 0.1.0
+Date: 2022-05-24
 Author: Julian Hall <jajhall@ed.ac.uk>
 Maintainer: Julian Hall <jajhall@ed.ac.uk>
 Title: High performance serial and parallel solver for large scale sparse linear optimization problems.
-Description: HiGHS is a high performance serial and parallel solver for large scale sparse linear optimization problems of the form
+Description: HiGHS is a high performance serial and parallel solver for
+ large scale sparse linear optimization problems of the form:
     Minimize (1/2) x^TQx + c^Tx subject to L <= Ax <= U; l <= x <= u
-  where Q must be positive semi-definite and, if Q is zero, there may be a requirement that some of the variables take integer values.
+ where Q must be positive semi-definite and, if Q is zero, there may be a
+ requirement that some of the variables take integer values.
 Categories: Optimization
-Depends: octave (>= 6.0.0)
+Depends: octave (>= 4.4.0)
 Autoload: no
-License: GPL3+
+License: GPL-3.0-or-later

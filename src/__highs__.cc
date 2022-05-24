@@ -241,7 +241,9 @@ highs (int sense, int n, int m, double *c, int nz, int *rn, int *cn,
   return errnum;
 }
 
+#if defined (OCTAVE_NAMESPACE_BEGIN)
 OCTAVE_NAMESPACE_BEGIN
+#endif
 
 #define OCTAVE_HIGHS_GET_REAL_PARAM(NAME, VAL)                           \
   do                                                                    \
@@ -364,10 +366,10 @@ Undocumented internal function.\n\
   Array<int> freeLB (dim_vector (mrowsc, 1));
   for (int i = 0; i < mrowsc; i++)
     {
-      if (math::isinf (lb[i]))
+      if (octave::math::isinf (lb[i]))
         {
           freeLB(i) = 1;
-          lb[i] = -numeric_limits<double>::Inf ();
+          lb[i] = -octave::numeric_limits<double>::Inf ();
         }
       else
         freeLB(i) = 0;
@@ -385,10 +387,10 @@ Undocumented internal function.\n\
   Array<int> freeUB (dim_vector (mrowsc, 1));
   for (int i = 0; i < mrowsc; i++)
     {
-      if (math::isinf (ub[i]))
+      if (octave::math::isinf (ub[i]))
         {
           freeUB(i) = 1;
-          ub[i] = numeric_limits<double>::Inf ();
+          ub[i] = octave::numeric_limits<double>::Inf ();
         }
       else
         freeUB(i) = 0;
@@ -570,4 +572,6 @@ Undocumented internal function.\n\
 %!assert (1)
 */
 
+#if defined (OCTAVE_NAMESPACE_END)
 OCTAVE_NAMESPACE_END
+#endif
